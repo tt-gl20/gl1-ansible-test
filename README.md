@@ -1,4 +1,4 @@
-# ansible-ec2-nginx
+# ansible-create-file-simple-task
 
 
 Simple Ansible task, description:
@@ -39,6 +39,7 @@ The below requirements are needed on the host that executes this module.
 
 - ansible 2.9.12
 - python >= 2.6
+- 4 VirtualBox vm-s (IP: 192.168.1.35-38)
 
 ## Run playbook
 
@@ -52,7 +53,10 @@ Simple run playbook:
 ```bash
 ansible-playbook   -u ubuntu -i inventory  --private-key=../your-own-key-file  playbook.yml
 ```
-
+or (for user/password):
+```
+ansible-playbook -i inventory playbook.yml --extra-vars "ansible_user=ubuntu ansible_password=..."
+```
 
 ## Output 
 
