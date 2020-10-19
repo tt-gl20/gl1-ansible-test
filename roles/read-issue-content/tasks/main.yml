@@ -1,10 +1,10 @@
 ---
-# tasks file for create-ec2-instances
+# tasks file for read-issue-content
 - name: define content of /etc/issue as variable
   shell: cat /etc/issue
   register: content_issue
 
 - name: printing hostnames together with registered variables 
   debug:
-    msg: "Printing hostname: {{ansible_hostname}} together with registered variable {{content_issue.stdout}}"
+    msg: "Printing hostname: {{ansible_hostname}} {{inventory_hostname}} together with registered variable {{content_issue.stdout}}"
 
