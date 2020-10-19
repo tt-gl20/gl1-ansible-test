@@ -1,0 +1,15 @@
+---
+# 
+- name: invoke the role for /etc/iaac for hosts group iaas
+  hosts: iaas
+  become: yes
+  gather_facts: False
+  roles:
+    - role: create-iaac-file
+
+- name: invoke the role for /etc/iaac for hosts group iaas
+  hosts: all
+  become: yes
+  gather_facts: False
+  roles:
+    - role: read-issue-content
